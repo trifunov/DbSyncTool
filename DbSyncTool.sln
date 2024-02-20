@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.4.33403.182
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DbSyncTool", "DbSyncTool\DbSyncTool.csproj", "{01668044-0B39-4396-895D-55C033819F8D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DbSyncTool.Core", "DbSyncTool.Core\DbSyncTool.Core.csproj", "{DCBA75CB-570D-44FA-80D4-AB05DE8BE9BC}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{01668044-0B39-4396-895D-55C033819F8D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{01668044-0B39-4396-895D-55C033819F8D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{01668044-0B39-4396-895D-55C033819F8D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{01668044-0B39-4396-895D-55C033819F8D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DCBA75CB-570D-44FA-80D4-AB05DE8BE9BC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DCBA75CB-570D-44FA-80D4-AB05DE8BE9BC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DCBA75CB-570D-44FA-80D4-AB05DE8BE9BC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DCBA75CB-570D-44FA-80D4-AB05DE8BE9BC}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {B4910040-845F-4A89-9D85-D00D35DC878F}
+	EndGlobalSection
+EndGlobal

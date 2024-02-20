@@ -1,0 +1,33 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+<div class="col-md-6 col-md-offset-3 col-sm-12">
+    <h1 class="display-4">Db sync tool</h1>
+    <div class="div-button col-md-6 col-md-offset-3 col-sm-12">
+        <button class="button-sync btn btn-primary" id="syncEmployees">Sync User - Employees</button>
+    </div>
+    <div class="div-button col-md-6 col-md-offset-3 col-sm-12">
+        <button class="button-sync btn btn-primary" id="syncAccounts">Sync Relations</button>
+    </div>
+    <div class="div-button col-md-6 col-md-offset-3 col-sm-12">
+        <button class="button-sync btn btn-primary" id="syncSites">Sync Surveys</button>
+    </div>
+    <div class="div-button col-md-6 col-md-offset-3 col-sm-12">
+        <button class="button-sync btn btn-primary" id="syncEvents">Sync Visit Types</button>
+    </div>
+    @*<div class="div-button col-md-6 col-md-offset-3 col-sm-12">
+        <button class="button-sync btn btn-primary" id="syncPortalLogins">Sync User - Customers</button>
+    </div>*@
+    <div class="div-button col-md-6 col-md-offset-3 col-sm-12">
+        <button class="button-sync btn btn-primary" id="syncWos">Sync Ordersheet</button>
+    </div>
+    <div class="div-button col-md-6 col-md-offset-3 col-sm-12">
+        <button class="button-sync btn btn-primary" id="syncInspectionPointCategory">Sync Inspection Point Category</button>
+    </div>
+    <div id="successMessage" class="alert alert-success" style="display:none">
+    
+  </div>
+</div>
