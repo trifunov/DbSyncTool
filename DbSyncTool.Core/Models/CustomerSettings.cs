@@ -13,5 +13,7 @@ namespace DbSyncTool.Core.Models
         public string TargetConnectionString { get; set; }
 
         public string CustomerName { get; set; }
+
+        public string CustomerShortName { get; set; }
     }
 }

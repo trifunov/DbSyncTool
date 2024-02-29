@@ -25,6 +25,6 @@ body {
     padding: 8px;
 }
 
-.button-sync {
-    width:100%
+.button-sync, .button-init-db {
+    width: 100%
 }

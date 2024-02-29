@@ -138,7 +138,15 @@ namespace DbSyncTool.Core
         {
             using (var connection = new SqlConnection(_customerSettings.TargetConnectionString))
             {
-                return connection.ExecuteScalar<int>("AppCustomerSyncStatusesGetByName", new { customerName = _customerSettings.CustomerName }, null, null, CommandType.StoredProcedure);
+                return connection.ExecuteScalar<int>("AppCustomerSyncStatusesGetByName", new { customerName = _customerSettings.CustomerName }, commandType: CommandType.StoredProcedure);
+            }
+        }
+
+        public void InitDb()
+        {
+            using (var connection = new SqlConnection(_customerSettings.TargetConnectionString))
+            {
+                connection.Execute("DbInitialSetupBeforeMigration", new { customerName = _customerSettings.CustomerName, customerShortName = _customerSettings.CustomerShortName }, commandType: CommandType.StoredProcedure);
             }
         }
     }

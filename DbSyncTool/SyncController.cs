@@ -80,5 +80,13 @@ namespace DbSyncTool
         {
             return _syncLogic.GetSyncStatus();
         }
+
+        [HttpGet]
+        [Route("api/[controller]/InitDb")]
+        public string InitDb()
+        {
+            _syncLogic.InitDb();
+            return "Database prepared";
+        }
     }
 }

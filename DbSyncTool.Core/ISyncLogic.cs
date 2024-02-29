@@ -17,5 +17,6 @@ namespace DbSyncTool.Core
         void SyncWos();
         void SyncInspectionPointCategory();
         int GetSyncStatus();
+        void InitDb();
     }
 }

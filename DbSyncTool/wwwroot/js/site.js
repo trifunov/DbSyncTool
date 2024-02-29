@@ -67,6 +67,14 @@ $("#syncInspectionPointCategory").click(function () {
     });
 });
 
+$("#initDb").click(function () {
+    $.ajax({
+        url: "/api/Sync/InitDb", success: function (result) {
+            fadeSuccess(result);
+        }
+    });
+});
+
 $(function () {
     setButtonsByStatus();
 });
