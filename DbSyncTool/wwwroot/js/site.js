@@ -67,6 +67,60 @@ $("#syncInspectionPointCategory").click(function () {
     });
 });
 
+$("#syncInspectionPointTypes").click(function () {
+    $.ajax({
+        url: "/api/Sync/SyncInspectionPointTypes", success: function (result) {
+            fadeSuccess(result);
+            setButtonsByStatus();
+        }
+    });
+});
+
+$("#syncInspectionPoints").click(function () {
+    $.ajax({
+        url: "/api/Sync/SyncInspectionPoints", success: function (result) {
+            fadeSuccess(result);
+            setButtonsByStatus();
+        }
+    });
+});
+
+$("#syncEventsSold").click(function () {
+    $.ajax({
+        url: "/api/Sync/SyncEventsSold", success: function (result) {
+            fadeSuccess(result);
+            setButtonsByStatus();
+        }
+    });
+});
+
+$("#syncEventsPattern").click(function () {
+    $.ajax({
+        url: "/api/Sync/SyncEventsPattern", success: function (result) {
+            fadeSuccess(result);
+            setButtonsByStatus();
+        }
+    });
+});
+
+$("#syncMaterialsSetup").click(function () {
+    $.ajax({
+        url: "/api/Sync/SyncMaterialsSetup", success: function (result) {
+            fadeSuccess(result);
+            setButtonsByStatus();
+        }
+    });
+});
+
+$("#syncMaterials").click(function () {
+    $.ajax({
+        url: "/api/Sync/SyncMaterials", success: function (result) {
+            fadeSuccess(result);
+            setButtonsByStatus();
+        }
+    });
+});
+
 $("#initDb").click(function () {
     $.ajax({
         url: "/api/Sync/InitDb", success: function (result) {

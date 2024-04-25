@@ -57,6 +57,29 @@ namespace DbSyncTool
             return "Users - Customers synced";
         }
 
+        [HttpGet]
+        [Route("api/[controller]/syncEventsSold")]
+        public string syncEventsSold()
+        {
+            _syncLogic.SyncEventsSold();
+            return "Services synced";
+        }
+
+        [HttpGet]
+        [Route("api/[controller]/syncEventsPattern")]
+        public string syncEventsPattern()
+        {
+            _syncLogic.SyncEventsPattern();
+            return "Recurrences synced";
+        }
+
+        [HttpGet]
+        [Route("api/[controller]/SyncInspectionPointCategory")]
+        public string SyncInspectionPointCategory()
+        {
+            _syncLogic.SyncInspectionPointCategory();
+            return "Inspection Point Categories synced";
+        }
 
         [HttpGet]
         [Route("api/[controller]/SyncWos")]
@@ -67,11 +90,35 @@ namespace DbSyncTool
         }
 
         [HttpGet]
-        [Route("api/[controller]/SyncInspectionPointCategory")]
-        public string SyncInspectionPointCategory()
+        [Route("api/[controller]/SyncInspectionPointTypes")]
+        public string SyncInspectionPointTypes()
         {
-            _syncLogic.SyncInspectionPointCategory();
-            return "Inspection Point Categories synced";
+            _syncLogic.SyncInspectionPointTypes();
+            return "Bait station types synced";
+        }
+
+        [HttpGet]
+        [Route("api/[controller]/SyncInspectionPoints")]
+        public string SyncInspectionPoints()
+        {
+            _syncLogic.SyncInspectionPoints();
+            return "Bait stations synced";
+        }
+
+        [HttpGet]
+        [Route("api/[controller]/SyncMaterialsSetup")]
+        public string SyncMaterialsSetup()
+        {
+            _syncLogic.SyncMaterialsSetup();
+            return "Materials setup synced";
+        }
+
+        [HttpGet]
+        [Route("api/[controller]/SyncMaterials")]
+        public string SyncMaterials()
+        {
+            _syncLogic.SyncMaterials();
+            return "Materials synced";
         }
 
         [HttpGet]

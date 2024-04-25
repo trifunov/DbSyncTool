@@ -16,7 +16,13 @@ namespace DbSyncTool.Core
         void SyncPortalLogins();
         void SyncWos();
         void SyncInspectionPointCategory();
+        void SyncEventsSold();
         int GetSyncStatus();
         void InitDb();
+        void SyncInspectionPointTypes();
+        void SyncInspectionPoints();
+        void SyncMaterialsSetup();
+        void SyncMaterials();
+        void SyncEventsPattern();
     }
 }

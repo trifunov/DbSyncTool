@@ -134,6 +134,102 @@ namespace DbSyncTool.Core
             }
         }
 
+        public void SyncEventsSold()
+        {
+            DataTable table = new DataTable();
+
+            using (var connection = new SqlConnection(_customerSettings.SourceConnectionString))
+            {
+                var reader = connection.ExecuteReader("PestScanEventsSoldGet", null, null, null, CommandType.StoredProcedure);
+                table.Load(reader);
+            }
+
+            using (var connection = new SqlConnection(_customerSettings.TargetConnectionString))
+            {
+                connection.Execute("TspEventsSoldInsert", new { eventssold = table.AsTableValuedParameter("TspEventsSold"), customerName = _customerSettings.CustomerName }, commandType: CommandType.StoredProcedure);
+            }
+        }
+
+        public void SyncInspectionPointTypes()
+        {
+            DataTable table = new DataTable();
+
+            using (var connection = new SqlConnection(_customerSettings.SourceConnectionString))
+            {
+                var reader = connection.ExecuteReader("PestScanTspInspectionPointTypeGet", null, null, null, CommandType.StoredProcedure);
+                table.Load(reader);
+            }
+
+            using (var connection = new SqlConnection(_customerSettings.TargetConnectionString))
+            {
+                connection.Execute("TspInspectionPointTypeInsert", new { iptype = table.AsTableValuedParameter("TspInspectionPointType"), customerName = _customerSettings.CustomerName }, commandType: CommandType.StoredProcedure);
+            }
+        }
+
+        public void SyncInspectionPoints()
+        {
+            DataTable table = new DataTable();
+
+            using (var connection = new SqlConnection(_customerSettings.SourceConnectionString))
+            {
+                var reader = connection.ExecuteReader("PestScanTspInspectionPointsGet", null, null, null, CommandType.StoredProcedure);
+                table.Load(reader);
+            }
+
+            using (var connection = new SqlConnection(_customerSettings.TargetConnectionString))
+            {
+                connection.Execute("TspInspectionPointsInsert", new { ips = table.AsTableValuedParameter("TspInspectionPoints"), customerName = _customerSettings.CustomerName }, commandType: CommandType.StoredProcedure);
+            }
+        }
+
+        public void SyncMaterialsSetup()
+        {
+            DataTable table = new DataTable();
+
+            using (var connection = new SqlConnection(_customerSettings.SourceConnectionString))
+            {
+                var reader = connection.ExecuteReader("PestScanMaterialsSetupGet", null, null, null, CommandType.StoredProcedure);
+                table.Load(reader);
+            }
+
+            using (var connection = new SqlConnection(_customerSettings.TargetConnectionString))
+            {
+                connection.Execute("TspMaterialsSetupInsert", new { materialsSetup = table.AsTableValuedParameter("TspMaterialsSetup"), customerName = _customerSettings.CustomerName }, commandType: CommandType.StoredProcedure);
+            }
+        }
+
+        public void SyncMaterials()
+        {
+            DataTable table = new DataTable();
+
+            using (var connection = new SqlConnection(_customerSettings.SourceConnectionString))
+            {
+                var reader = connection.ExecuteReader("PestScanMaterialsGet", null, null, null, CommandType.StoredProcedure);
+                table.Load(reader);
+            }
+
+            using (var connection = new SqlConnection(_customerSettings.TargetConnectionString))
+            {
+                connection.Execute("TspMaterialsInsert", new { materials = table.AsTableValuedParameter("TspMaterials"), customerName = _customerSettings.CustomerName }, commandType: CommandType.StoredProcedure);
+            }
+        }
+
+        public void SyncEventsPattern()
+        {
+            DataTable table = new DataTable();
+
+            using (var connection = new SqlConnection(_customerSettings.SourceConnectionString))
+            {
+                var reader = connection.ExecuteReader("PestScanEventsPatternGet", null, null, null, CommandType.StoredProcedure);
+                table.Load(reader);
+            }
+
+            using (var connection = new SqlConnection(_customerSettings.TargetConnectionString))
+            {
+                connection.Execute("TspEventsPatternInsert", new { eventspattern = table.AsTableValuedParameter("TspEventsPattern"), customerName = _customerSettings.CustomerName }, commandType: CommandType.StoredProcedure);
+            }
+        }
+
         public int GetSyncStatus()
         {
             using (var connection = new SqlConnection(_customerSettings.TargetConnectionString))
