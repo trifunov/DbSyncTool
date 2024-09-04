@@ -121,6 +121,24 @@ $("#syncMaterials").click(function () {
     });
 });
 
+$("#syncInspectionPointHistory").click(function () {
+    $.ajax({
+        url: "/api/Sync/SyncInspectionPointHistory", success: function (result) {
+            fadeSuccess(result);
+            setButtonsByStatus();
+        }
+    });
+});
+
+$("#syncTargetPest").click(function () {
+    $.ajax({
+        url: "/api/Sync/syncTargetPest", success: function (result) {
+            fadeSuccess(result);
+            setButtonsByStatus();
+        }
+    });
+});
+
 $("#initDb").click(function () {
     $.ajax({
         url: "/api/Sync/InitDb", success: function (result) {

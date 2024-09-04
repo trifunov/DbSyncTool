@@ -24,5 +24,7 @@ namespace DbSyncTool.Core
         void SyncMaterialsSetup();
         void SyncMaterials();
         void SyncEventsPattern();
+        void SyncTargetPest();
+        void SyncInspectionPointHistory();
     }
 }

@@ -230,6 +230,38 @@ namespace DbSyncTool.Core
             }
         }
 
+        public void SyncTargetPest()
+        {
+            DataTable table = new DataTable();
+
+            using (var connection = new SqlConnection(_customerSettings.SourceConnectionString))
+            {
+                var reader = connection.ExecuteReader("PestScanTargetPestGet", null, null, null, CommandType.StoredProcedure);
+                table.Load(reader);
+            }
+
+            using (var connection = new SqlConnection(_customerSettings.TargetConnectionString))
+            {
+                connection.Execute("TspTargetPestInsert", new { targetpest = table.AsTableValuedParameter("TspTargetPest"), customerName = _customerSettings.CustomerName }, commandType: CommandType.StoredProcedure);
+            }
+        }
+
+        public void SyncInspectionPointHistory()
+        {
+            DataTable table = new DataTable();
+
+            using (var connection = new SqlConnection(_customerSettings.SourceConnectionString))
+            {
+                var reader = connection.ExecuteReader("PestScanInspectionPointHistoryGet", null, null, null, CommandType.StoredProcedure);
+                table.Load(reader);
+            }
+
+            using (var connection = new SqlConnection(_customerSettings.TargetConnectionString))
+            {
+                connection.Execute("TspInspectionPointHistoryInsert", new { inspectionpointhistory = table.AsTableValuedParameter("TspInspectionPointHistory"), customerName = _customerSettings.CustomerName }, commandType: CommandType.StoredProcedure);
+            }
+        }
+
         public int GetSyncStatus()
         {
             using (var connection = new SqlConnection(_customerSettings.TargetConnectionString))

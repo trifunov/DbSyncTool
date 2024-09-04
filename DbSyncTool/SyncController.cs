@@ -122,6 +122,22 @@ namespace DbSyncTool
         }
 
         [HttpGet]
+        [Route("api/[controller]/SyncTargetPest")]
+        public string SyncTargetPest()
+        {
+            _syncLogic.SyncTargetPest();
+            return "Bug Types synced";
+        }
+
+        [HttpGet]
+        [Route("api/[controller]/SyncInspectionPointHistory")]
+        public string SyncInspectionPointHistory()
+        {
+            _syncLogic.SyncInspectionPointHistory();
+            return "Bait Station Registrations synced";
+        }
+
+        [HttpGet]
         [Route("api/[controller]/GetSyncStatus")]
         public int GetSyncStatus()
         {
